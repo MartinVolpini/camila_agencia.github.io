@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!--CON ESTE LINK INTRODUCIS LAS TRES LINEAS DEL MENU RESPONSIVE-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+        
+        
+        
+        let input = document.querySelector('#check');
+        console.log(input.value);
+    </script>
+    <style>
+
+      body {
+        margin: auto; max-width: 1440px; box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif, Arial, Helvetica; 
+      }
+      a {
+        text-decoration: none; color: #ffffff!important;  
+      }
+      a:hover { 
+        background: rgba(163, 163, 163, 0.39); color: #ffffff;
+      }
+
+                                /*INICIO*/
+      .menu {
+        /*display: flex; flex-flow: row nowrap; justify-content: space-between;*/
+        height: 4.5rem; width: 100%;  margin-top: 0px;
+        background-color: #f70759; 
+      }
+      h1 {
+        /*justify-self: start; align-self: center;*/
+        position: absolute;
+        line-height: 4.5rem; padding: 0px 50px;
+        color: #ffffff; font-size: 1.8rem;
+      }
+      /*nav {  
+        align-self: center;
+        padding: 10px; margin: 0px 2rem;
+        
+      }*/
+      nav ul {  
+        list-style: none; float: right;  
+        padding: 0px; margin-right: 20px; 
+      }
+      nav ul li {
+        display: inline-block; line-height: 4.5rem; /*PONES LA ALTURA DEL CONTENEDOR Y EL ELEMENTO SE SENTRA*/ 
+        margin: 0px 10px;  
+      }
+      nav ul li a { 
+        padding: 9PX 25px; border-radius: 22px;
+        font-size: 18px; 
+      }
+      li a:hover{
+            background: rgba(163, 163, 163, 0.39); 
+            transition: .5s; /*TIEMPO PARA QUE OCURRA EL EFECTO*/
+      }
+      .checkbtn {
+          display: none;  float: right; 
+          line-height: 4.5rem; margin-right: 40px;
+          font-size: 30px; color: #fff;
+          cursor: pointer; /*SIRVE PARA CUANDO PONES EL MOUS ARRIBA DEL ELEMENTO ESTE SE TRANSFORME EN UNA MANITO Y NO EN UNA FLECHA*/
+      }
+      #check {
+          display: none;
+      }
+      @media (max-width: 960px){                /*TABLET*/ 
+        h1 { 
+          position: absolute;
+          line-height: 4.5rem; padding-left: 30px;  
+          font-size: 25px; 
+                
+        }    
+        nav ul li a {
+          font-size: 1rem;
+        }
+      }
+      @media (max-width: 858px) {                 /*PHONE*/
+        .checkbtn {
+          display: block; 
+        }
+        ul { z-index: 22;
+          text-align: center; position: fixed; top: 4.5rem; left: -100%;/*TOP: EL TAMANIO DEL NAV, LEFT: LO OCULTA*/
+          height: 100vh; width: 100%;
+          background: #333333; /*MMMMMMM vos deci?*/
+          transition: all .5s;
+        }  
+        nav ul li { 
+          display: block; 
+          margin: 60px 0px;
+          line-height: 30px; /*LE DAS ESPACIO ENTRE C/U DE LOS ELEMENTOS*/
+        } 
+        nav ul li a {
+          font-size: 20px;
+        }
+        li a:hover{
+          border-radius: 22px;
+          background: rgb(119, 119, 119);  
+        }
+        /*SOLO CUANDO EL CHECK INPUT ESTE ACTIVADO VA A APRARECER EL MENU SINTAXIS:*/
+        #check:checked ~ ul {
+          left: 0%; 
+        }
+
+      }
+     
+                                /*CARRUSEL*/
+    .carrusel {
+        position: relative;
+        min-height: 587px; width: 100%; margin-bottom: 10px; box-sizing: border-box;
+        background-color: #fff0ff; 
+    }/*
+    .d-block { 
+        height: 650px; width: auto;
+    }*/
+    .btn a{
+        position: absolute; left: 50%; bottom: 100px;
+        /*border: 2px solid #f70759;*/padding: 9px 16px; border-radius: 22px; border: none;
+        color: #f70759; background-color: #333333; letter-spacing: 1.2px; font-size: 18px;
+    }
+
+                                /* SERVICIOS*/
+    .box {  
+        display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
+        height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px;  box-sizing: border-box;
+        background-color: #ffffff; color: #f70759; 
+    }
+    .box__text {
+        order: 1; align-self: center; flex-basis: 35rem;
+
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .box__h3 {
+        margin: 15px 0px; padding: 0px;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    /*.box__bp { 
+
+    }*/
+    .box__img {
+        order: 2; align-self: center;
+        height: 85%;/*width: 50%;*/ ;clip-path: polygon(30% 0, 100% 0, 100% 100%, 15% 100%);; 
+    }
+
+    .box1 {  
+        display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
+        height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px; box-sizing: border-box; 
+        background-color: #ffffff; color: #f70759; 
+    }
+    .box1__text {
+        order: 2; align-self: center; flex-basis: 35rem;
+        margin: 15px 10px 15px 15px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .box1__h3 {
+        margin: 15px 0px; padding: 0px;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    /*.box1__bp { 
+
+    }*/
+    .box1__img {
+        order: 1; align-self: center; 
+        height: 60%; clip-path: circle(40% at center); 
+    }
+
+    .box2 {  
+        display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
+        height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px; box-sizing: border-box;
+        background-color: #ffffff; color: #f70759; 
+    }
+    .box2__text {
+        order: 1; align-self: center; flex-basis: 35rem;
+        margin: 15px 15px 15px 10px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .box2__h3 {
+        margin: 15px 0px; padding: 0px;
+        text-align: center;
+        font-size: 2.5rem; 
+    }
+    /*.box2__bp { 
+
+    }*/
+    .box2__img {
+        order: 2; align-self: center; 
+        height: 80%; border-radius: 160px; 
+    }
+                                /*CLIENTES*/
+    .clientes { 
+        display: flex; flex-flow: row wrap; justify-content: space-around; 
+        height: auto; width: 100%; margin: 20px  ; border: #fde50e solid 1px; box-sizing: border-box; margin: 0px;
+        background-color: #ffffff; color: #f70759; font-size: 1rem;
+    }
+    .card {
+      width: 23rem;
+    }
+                                /*CONTACTO*/
+    .contacto {
+        display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
+        height: 38rem; width: 100%; margin-bottom: 10px; box-sizing: border-box;
+        background-color: #f70759; font-size: 1rem;
+    }
+    .mb-3 { 
+        width: 50%;   
+        padding: 5px 10px; margin: 27px 0px;
+        color: #ffffff;
+    }
+    .btn-primary {
+        /*border: 2px solid #ffffff;*/ padding: 8px 16px; border-radius: 22px; border: none;
+        color: #f70759; background-color: #333333; letter-spacing: 1.2px; font-size: 18px;
+    }
+
+    .whatsapp {
+        position: fixed; bottom: 10px; left: 85%;
+        height: 5rem; width: 10rem; border-radius: 66%;
+        background-color: black;
+    }
+
+                                /*FOOTER*/
+    .footer {
+
+        display: block;
+        height: 300px; width: 100%; margin: 0px;  box-sizing: border-box;
+        background: #333333 ;
+    }
+
+    </style>
+</head>
+<body>
+
+      
+                              <!--INICIO-->
+  
+    <nav class="menu" id="inicio">
+      <h1>Cami Volpini Agencia</h1>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+
+      <ul>
+        <li>
+            <a class="itemNav" href="#inicio" >Inicio</a>
+        </li>
+        <li>
+            <a class="itemNav" href="#servicios" >Servicios</a>
+        </li>
+        <li>
+            <a class="itemNav" href="#clientes" >Clientes</a>
+        </li>
+        <li>
+            <a class="itemNav" href="#contacto" >Contacto</a>
+        </li>
+      </ul>
+    </nav>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </nav>
+  
+
+  <div class="carrusel">
+
+    <button class="btn"><a href="#contacto">Contacto</a></button>
+  
+  </div>
+
+                                 <!--Servicios-->
+
+  <div id="servicios" class="box">
+  <div class="box__text">
+      <h3 class="box__h3">Redes sociales</h3>
+      <p class="box__bp">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Tenetur expedita culpa earum doloremque,
+        blanditiis pariatur quos mollitia repellat assumenda minus
+        vitae corrupti beatae accusamus perspiciatis?
+      </p> 
+  </div>
+  <img class="box__img" src="img/redes-2.jpg" alt="Imagen">
+</div>
+
+<div class="box1">
+  <div class="box1__text">
+      
+      <h3 class="box1__h3">Construcción de marca</h3>
+      <p class="box1__bp">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Tenetur expedita culpa earum doloremque,
+        blanditiis pariatur quos mollitia repellat assumenda minus
+        vitae corrupti beatae accusamus perspiciatis?
+      </p> 
+  </div>
+  
+  <img class="box1__img" src="img/marcas.jpg" alt="Marca">
+</div>
+
+<div class="box2">
+  <div class="box2__text">    
+      
+      <h3 class="box2__h3">Google adwords</h3>
+      <p class="box2__bp">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      Tenetur expedita culpa earum doloremque,
+      blanditiis pariatur quos mollitia repellat assumenda minus
+      vitae corrupti beatae accusamus perspiciatis?
+      </p> 
+  </div>
+
+  <img class="box2__img" src="img/ads (0).png" alt="Google ads">
+</div>
+
+                                  <!--Clientes-->
+
+  <div id ="clientes" class="clientes">
+
+    <div class="card" >
+          <img src="img/break-down-THE-WALL.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+    <div class="card" >
+          <img src="img/break-down-THE-WALL.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+    <div class="card" >
+          <img src="img/break-down-THE-WALL.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+    <div class="card" >
+          <img src="img/break-down-THE-WALL.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+
+  </div>
+  
+                                        <!--Contacto-->
+
+  <form id="contacto" class="contacto" action="https://formsubmit.co/martin.volpini@gmail.com" method="post">
+
+    <div class="mb-3 item1">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input class="form-control" id="name" type="text" name="name" placeholder="name" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input class="form-control" id="mail" type="email"  name="email" placeholder="name@example.com" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="messaje" name="messaje" rows="3" required></textarea>
+    </div>
+
+    
+    <div class="mb-3 col-12 col-12--boton">
+        <button class="btn btn-primary" type="submit" value="input">Enviar</button>
+    </div>
+
+  </form>           
+   
+  <div class="footer">
+  </div>
+
+  <div class ="whatsapp">
+     <a></a> <img>
+  </div>
+
+  
+</body>
+</html>

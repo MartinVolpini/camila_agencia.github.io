@@ -1,0 +1,251 @@
+
+/*------------------- ----------------------               -----------------------              ---------------*/
+:root{
+    --back:#333333;
+    --white:#ffffff;
+    --fucsia: #f70759;
+}
+body {
+    max-width: 1440px;  margin: auto; 
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica; 
+}
+a {
+    text-decoration: none; color: var(--white);    
+}
+nav ul li a:hover{ color: #333333 !important ; }
+                            /*INICIO*/
+*{
+    margin: 0%;
+    box-sizing: border-box;  
+  }
+  .nav-link{ /*esto es lo mismo q seleccionar la etiqueta a{}*/
+      text-decoration: none;  color: var(--white);
+      padding: 0px 12px; margin: 0px;
+  }
+  li{ list-style: none; display: inline-block;}
+  
+  .header{
+      
+     /* position: fixed; top: 0; left: 0; /*No lo afecta es sckull. Sacalo si no lo queres*/
+      max-height: 4.5rem; width: 100%; margin: auto;
+      background-color: var(--fucsia); color: var(--white);
+  }
+  .header_solucion{
+    z-index: 5;
+    position: fixed; top: 0; left: 0; /*Me soluciona un problema con el menu en el modo movil*/
+  }
+  .nav{
+      display: flex; justify-content: space-between;
+      max-width: 1400px; margin: 0px auto;/*Es para q en pantallas grandes no queden los elementos tan separados.*/
+      color: var(--white);
+  }
+  .logo{ 
+      line-height: 4.5rem; padding: 0px 40px;
+      color: var(--white); font-size: 1.8rem;/*font-size: 30px; font-weight: bold; */
+  }
+  .nav-toggle{
+      display: none;  font-size: 1.5rem; align-self: center; justify-self: center;
+      border: none; padding: 0px 20px; margin: 0px; /*Es 60 pq cuando este en modo movil el header va a estar en 60px*/
+      background: none; color: var(--white);
+      cursor: pointer;
+  }
+  .nav-toggle:focus:not(:focus-visible){/*Es para sacar el outline y q solo este cuando se selecciona con el tabulador*/
+      outline: none;                      /*NO ME FUNCIONA!!*/
+  }
+  .nav-menu-items{
+      line-height: 4.5rem;  margin-right: 40px; 
+      font-size: 18px;
+  }
+
+  .nav-menu-items .nav-link:hover{
+      border-radius: 3px; 
+      opacity: 0.9;
+      transition: 0.4s;
+  }
+  @media (max-width: 896px){
+    
+    .header{ 
+        height: 60px;  box-sizing: border-box;  
+    }
+    .nav{
+        display: flex; justify-content: space-between;
+        padding: 0%;  margin: 0px;/*Es para q en pantallas grandes no queden los elementos tan separados.*/
+    }
+    .logo{ 
+        line-height: 60px; padding: 0px 16px;
+        font-size: 1.5rem; 
+    }
+    .nav-toggle{ 
+        display: inline; 
+    }
+    .menu{ 
+        position: fixed; top: 60px; /*Ya deja de depender de su contenedor header y se posisiona de a cuerdo con el body sin q le afecte el sckoll*/
+        z-index: 50;
+        display: flex; flex-direction: column;  text-align: center;
+        width: 100%; padding: 0%; /*El navegador por defecto a los ul les agrega un padding-left. Sacaselo para q los elementos queden sentrados*/
+        height: calc(100% - 60px);/*AL SER POSITION:FIXED; NO LO VA A AFECTAR EL SCKOOL, PUEDE A QUEDEN ELEMENTOS DE FORMA INAXECOBLES. EL VALOR DE 100% LE DICE A SEA EL 100 POR CIENTO DEL VIWPORT Y Q LE RESTE LOS 60PX DEL HEADER.*/
+        overflow-y: auto; /*LE AGREGAS UN SCKULL POR SI EL DISPOSITIVO ES CHICO*/
+        background-color: var(--back);
+
+        left: 100%;
+        transition: left 0.3s;
+    }       /*EN ESTAS LINAES DE ARRIBA Y DE ABAJO ESTAN LOS VALORES PARA Q EL MENU SE DESPLIEGUE, en el js esta el resto*/
+    .nav-menu_visible {
+        left: 0%;
+    }
+    .nav-menu-items{
+        display: block; 
+        line-height: 70px; padding: 50px 0px; margin: 0%;
+    }
+    .nav-menu-items .nav-link:hover,.nav-menu-items .nav-link:active{
+        border-radius: 3px; 
+        background-color: none; color: rgb(192, 173, 173); 
+        transition: 0.4s;
+    }
+}
+@media (max-width: 380px){
+    .logo{ 
+        line-height: 60px; padding: 0px 10px; 
+        font-size: 6px; 
+    }
+}
+/*---------------                 -------------------                  -------------------                --------------*/
+                            /*CARRUSEL*/
+.carrusel { 
+    position:  relative;
+    min-height: 587px; width: 100%; margin-bottom: 10px;  box-sizing: border-box;
+    background-color: #fff0ff; 
+    background-image: url("/rr.png");
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+}
+.d-block { 
+    height: 650px; width: auto;
+}
+.btn a{
+    position: absolute; left: 50%; bottom: 100px;
+    /*border: 2px solid #f70759;*/padding: 9px 16px; border-radius: 22px; border: none;
+    color: var(--fucsia); background-color: var(--back); 
+    letter-spacing: 1.2px; font-size: 19px; font-family: "Noto Sans,Helvetiva";
+}
+
+                            /* SERVICIOS*/
+.box {  
+    display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
+    height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px;  box-sizing: border-box;
+    background-color: #ffffff; color: #f70759; 
+}
+.box__text {
+    order:1; align-self: center; flex-basis: 35rem;
+    padding-left: 5%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.box__h3 {
+    margin: 15px 0px; padding: 0px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+.box__bp{ padding: 0px 30px; } /*Es para q el texto este mas junto*/
+.box__img {
+    order: 2; align-self: center; padding: 0%;     
+    height: 79%; clip-path: circle(41% at center);
+    /*height: 80%; border-radius: 160px;*/ /*clip-path: polygon(30% 0, 100% 0, 100% 100%, 15% 100%);*/
+}
+.box1__text {
+    order: 2; align-self: center; flex-basis: 35rem;
+    padding-right: 5%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.box1__img {
+    order: 1; align-self: center; padding: 0%;    margin: 0px auto ;
+    height: 79%; clip-path: circle(41% at center); 
+}
+.box2__text {
+    order: 1; align-self: center; flex-basis: 35rem;
+    padding-left: 5%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.box2__img {
+    order: 2; align-self: center; 
+    height: 77%; clip-path: circle(45% at center); /*height: 80%; border-radius: 160px; */
+}
+@media (max-width: 1200px) and (min-width:896px){
+    .box__h3 {
+        font-size: 2.0rem;
+    }
+    .box__img {
+        height: 73%; clip-path: circle(41% at center);
+    }
+    .box1__img {
+        align-self: center;  padding: 0%; margin-left: 5%;
+        height: 70%; clip-path: circle(41% at center); 
+    }
+    .box2__img {
+        order: 2; align-self: center; 
+        height: 72%; clip-path: circle(45% at center); /*height: 80%; border-radius: 160px; */
+    }
+    
+ }
+ @media (max-width:896px){
+    .box__text {padding: 0px;}
+    .box1__text {padding: 0px;}
+    .box2__text {padding: 0px;}
+    .imgNone { display: none; } 
+ }
+
+                            /*CLIENTES*/
+.clientes { 
+    display: flex; flex-flow: wrap; justify-content: space-around; 
+    height: auto; width: 100%; margin: 20px  ; border: #fde50e solid 1px; box-sizing: border-box; margin: 0px;
+    background-color: #ffffff; color: #f70759; font-size: 1rem;
+}
+
+                            /*CONTACTO*/
+.contacto {
+    display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
+    height: 38rem; width: 100%; margin-bottom: 10px; box-sizing: border-box;
+    background-color: #f70759; font-size: 1rem;
+}
+.mb-3 { 
+    width: 50%;   
+    padding: 5px 10px; margin: 27px 0px;
+    color: #ffffff;
+}
+.btn-primary {
+    /*border: 2px solid #ffffff;*/ padding: 8px 16px; border-radius: 22px; border: none;
+    color: #f70759; background-color: #333333; letter-spacing: 1.2px; font-size: 18px;
+}
+
+.whatsapp { display: flex; flex-direction: column; text-align: center;  transition: all 0.3s;
+    position: fixed; bottom: 10px; right: 0%;
+    height: 10rem; width: 3rem; border-radius: 10px;
+    background-color: var(--fucsia); color: var(--white);
+    font-weight: bold;
+}
+a .letter{
+    margin: 0px; padding: 1px 0px;
+    font-size: 16px;
+}
+.whatsapp a:hover,.whatsapp a:active{ color: var(--white); opacity: 0.5; font-size: 14px;}
+@media (max-width: 896px){ .whatsapp{ display: none;} }
+
+                            /*FOOTER*/
+.footer {
+
+    display: block;
+    height: 300px; width: 100%; margin: 0px;  box-sizing: border-box;
+    background: #333333 ;
+}
+
+.checkbtn{  width: 10%; line-height: 100%; margin: auto;}
+.linemenu{ 
+    background-color: #14b314; color: #ffffff;
+    max-width: 2rem; line-height: 100%; padding: 1.8px 0px; border-radius: 3px; margin: 10px auto;
+
+}
+@media only screen and (max-width: 896px){
+    .logo { font-size: 1.5rem; }
+   
+}
