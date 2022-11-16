@@ -25,7 +25,7 @@ function callback(entries){
 
     entries.forEach( entry=>{
         if(entry.isIntersecting){  
-            console.log(entry.terget + " Es intersectado") 
+            //console.log(entry.terget + " Es intersectado") 
             atajo.style.visibility= "hidden"; 
         } else if( !entry.isIntersecting ){ atajo.style.visibility= "visible";  }
     })
@@ -36,4 +36,3 @@ const mirar = new IntersectionObserver(callback)
 mirar.observe(logo)
 
 
-console.log("asasasas")

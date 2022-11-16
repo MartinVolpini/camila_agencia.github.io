@@ -13,7 +13,8 @@ a {
     text-decoration: none; color: var(--white);    
 }
 nav ul li a:hover{ color: #333333 !important ; }
-                            /*INICIO*/
+
+                                        /*---------             ---------------    INICIO         ---------------          ---------------*/
 *{
     margin: 0%;
     box-sizing: border-box;  
@@ -109,13 +110,14 @@ nav ul li a:hover{ color: #333333 !important ; }
         font-size: 6px; 
     }
 }
-/*---------------                 -------------------                  -------------------                --------------*/
-                            /*CARRUSEL*/
-.carrusel { 
-    position:  relative;
+
+                    /*---------------                 -------------------        CARRUSEL          -------------------                --------------*/
+                         
+.carrusel {                                                 /*ESTA IMAGEN NO CARGA EN EL LINK DE GITHUB!!! PONE UNA ETIQUETA IMG*/
+    position:  relative; 
     min-height: 587px; width: 100%; margin-bottom: 10px;  box-sizing: border-box;
-    background-color: #fff0ff; 
-    background-image: url("/rr.png");
+    background-color: #fff0ff;
+    background-image: url("/img/portada.jpg");
     background-position: center; background-size: cover; background-repeat: no-repeat;
 }
 .d-block { 
@@ -128,7 +130,7 @@ nav ul li a:hover{ color: #333333 !important ; }
     letter-spacing: 1.2px; font-size: 19px; font-family: "Noto Sans,Helvetiva";
 }
 
-                            /* SERVICIOS*/
+                          /*     -----------          ------------------          SERVICIOS          ---------------                -----------------*/
 .box {  
     display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
     height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px;  box-sizing: border-box;
@@ -196,12 +198,63 @@ nav ul li a:hover{ color: #333333 !important ; }
  }
 
                             /*CLIENTES*/
-.clientes { 
-    display: flex; flex-flow: wrap; justify-content: space-around; 
-    height: auto; width: 100%; margin: 20px  ; border: #fde50e solid 1px; box-sizing: border-box; margin: 0px;
-    background-color: #ffffff; color: #f70759; font-size: 1rem;
+.clientes--titulo{
+    display: block; padding: 0px 40px; margin: 4rem 0rem 1rem 0rem; 
+   /* font-size: 2.5rem;  */ 
+    max-height: 4.5rem;
+    font-size: 2.5rem;/*font-size: 30px; font-weight: bold; */
+
 }
 
+.clientes { 
+    display: flex; flex-flow: wrap; justify-content: space-evenly; 
+    height: auto; width: 100%; margin: 20px 40px ; box-sizing: border-box; margin: 0px;
+    background-color: #ffffff; color: var(--fucsia); font-size: 1rem;
+}
+.card{ box-sizing: border-box;
+     margin: 2rem 0rem 4rem 0rem; border-radius: 28px;
+     transition: all; position: relative; /*border: #14b314 solid 2px;*/
+}
+.card-img{   
+    border: none; height: 100%; margin: 0%; padding: 0%;
+}
+.card-img img{  border-top-left-radius: 26px; border-top-right-radius: 26px}
+.card-body{
+    display: inline-block;  width: 100%; border-bottom-left-radius: 18px;  border-bottom-right-radius: 18px;
+    background-color: var(--back);   position: absolute; bottom: -17%; z-index: 2;
+}
+.card-titulo{
+    padding: 0px; margin: 0px ; 
+    line-height: 1.3rem;
+    color: var(--white); font-weight: 400;
+}
+.card-text{
+    display: none; 
+}
+
+@media (max-width: 1200px) and (min-width:896px){
+    .clientes--titulo {
+        font-size: 2.0rem;
+    }   
+}
+@media (max-width:896px){
+    .clientes--titulo{ text-align: center; }
+}
+
+.card:hover  .card-text { 
+    display: inline-block; margin-top: 10px; 
+    /* transition: display 0.8s; */
+}
+.card:hover  .card-body { 
+    background-color: #333333e7; 
+}
+.card:hover img{ 
+    opacity: 0.5;
+    transition: opacity 0.8s;
+}
+p .card-link:hover,p .card-link:active,p .card-link:focus{
+    color: #ffef49 !important ;  text-decoration: none;
+}
                             /*CONTACTO*/
 .contacto {
     display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
@@ -231,12 +284,16 @@ a .letter{
 .whatsapp a:hover,.whatsapp a:active{ color: var(--white); opacity: 0.5; font-size: 14px;}
 @media (max-width: 896px){ .whatsapp{ display: none;} }
 
-                            /*FOOTER*/
+                  /*---------------               -------------------     FOOTER              ---------------               --------------*/
 .footer {
 
-    display: block;
+    display: flex;  flex-direction: column;  justify-content: end; text-align: center;
     height: 300px; width: 100%; margin: 0px;  box-sizing: border-box;
-    background: #333333 ;
+    background: var(--back) ; color: var(--white);
+}
+.footer p{ 
+    width: 90%; padding: 2rem 0rem 1rem 0rem;  border-top: #eee 1px solid;  margin: 1rem auto;
+   
 }
 
 .checkbtn{  width: 10%; line-height: 100%; margin: auto;}
