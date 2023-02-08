@@ -197,7 +197,7 @@ nav ul li a:hover{ color: #333333 !important ; }
     .imgNone { display: none; } 
  }
 
-                            /*CLIENTES*/
+                                             /*CLIENTES*/
 .clientes--titulo{
     display: block; padding: 0px 40px; margin: 4rem 0rem 1rem 0rem; 
    /* font-size: 2.5rem;  */ 
@@ -255,7 +255,7 @@ nav ul li a:hover{ color: #333333 !important ; }
 p .card-link:hover,p .card-link:active,p .card-link:focus{
     color: #ffef49 !important ;  text-decoration: none;
 }
-                            /*CONTACTO*/
+                                            /*CONTACTO*/
 .contacto {
     display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
     height: 38rem; width: 100%; margin-bottom: 10px; box-sizing: border-box;
@@ -271,7 +271,8 @@ p .card-link:hover,p .card-link:active,p .card-link:focus{
     color: #f70759; background-color: #333333; letter-spacing: 1.2px; font-size: 18px;
 }
 
-.whatsapp { display: flex; flex-direction: column; text-align: center;  transition: all 0.3s;
+.whatsapp { 
+    display: flex; flex-direction: column; text-align: center;  transition: all 0.3s;
     position: fixed; bottom: 10px; right: 0%;
     height: 10rem; width: 3rem; border-radius: 10px;
     background-color: var(--fucsia); color: var(--white);
@@ -292,7 +293,7 @@ a .letter{
     background: var(--back) ; color: var(--white);
 }
 .footer p{ 
-    width: 90%; padding: 2rem 0rem 1rem 0rem;  border-top: #eee 1px solid;  margin: 1rem auto;
+    min-width: 40%; padding: 2rem 0rem 1rem 0rem;  border-top: #eee 1px solid;  margin: 1rem auto;
    
 }
 

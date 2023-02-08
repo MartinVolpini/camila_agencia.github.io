@@ -36,3 +36,41 @@ const mirar = new IntersectionObserver(callback)
 mirar.observe(logo)
 
 
+/*-------------     ----------------   FORM   -------------------         -------- */
+
+let enviar = document.getElementById("btn-submit");
+
+let sendForm = async()=>{
+    let _nombre = document.getElementById("name");
+    let _email = document.getElementById("mail");
+    let _message = document.getElementById("message");
+
+    let options = {
+        method: "POST", 
+        body: JSON.stringify({
+            "_nombre": `${_nombre.value}`,
+            "_email": `${_email.value}`,
+            "_message": `${_message.value}`
+        }),
+        headers: {"Content-Type":"application/json"}
+    }
+
+    // console.log("btn alcanzado", options.body);
+    
+    let peticion  = await fetch(`http://localhost:4250/email`, options)
+    let resultado = await peticion.json()
+  
+}
+
+enviar.addEventListener("click", (e)=>{
+    e.preventDefault();
+    sendForm();
+    
+    let _nombre = document.getElementById("name"); let _email = document.getElementById("mail");
+    let _message = document.getElementById("message");
+
+    // console.log("btn alcanzado" );
+
+    setTimeout(()=>{  _nombre.value=""; _email.value= ""; _message.value=""; },500) 
+    
+})
