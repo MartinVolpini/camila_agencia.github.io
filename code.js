@@ -21,11 +21,10 @@ let logo = document.querySelector(".logo")
 let atajo = document.querySelector(".whatsapp")
 
 function callback(entries){
-   // console.log("sdsdsd")
 
     entries.forEach( entry=>{
         if(entry.isIntersecting){  
-            //console.log(entry.terget + " Es intersectado") 
+            //console.log(entry.target + " Es intersectado") 
             atajo.style.visibility= "hidden"; 
         } else if( !entry.isIntersecting ){ atajo.style.visibility= "visible";  }
     })
@@ -35,6 +34,99 @@ function callback(entries){
 const mirar = new IntersectionObserver(callback)
 mirar.observe(logo)
 
+/* ANIMACIONES DE LOS SERVICIOS*/
+
+const servicios = document.querySelectorAll(".box")
+
+
+function aparece (entries){
+    let a = window.innerHeight/3.5;
+    // console.log(a)
+    entries.forEach( entry => {
+        if(entry.isIntersecting){  
+
+            // console.log(entry.target + " Es intersectado")
+            // console.log( entry ) 
+            entry.target.firstElementChild.style.animation = "apareceRandL 1s ease-out";
+            
+            entry.target.lastElementChild.style.animation = "apareceLandR 1s ease-out";
+            entry.target.firstElementChild.style.visibility = "visible";
+            entry.target.lastElementChild.style.visibility = "visible";
+
+            
+        } else if( !entry.isIntersecting ){ 
+            // entry.target.firstElementChild.style.animation = "";
+            // entry.target.lastElementChild.style.animation = "";
+            // entry.target.firstElementChild.style.visibility = "hidden";
+            // entry.target.lastElementChild.style.visibility= "hidden";
+        }
+    })
+}
+const options = {
+    threshold:0.7
+    // rootmargin: "100%"
+}
+const mirarServicios = new IntersectionObserver( aparece, options );
+
+servicios.forEach( ( servicio ) => {  
+    mirarServicios.observe( servicio )
+})
+//! LA ANIMACION CSS ME GENERA UN SCROLL ORIZONTAL QUE HACE QUE LA PAG SE COMPORTE RARA
+//OTRA FORMA DE HACER LO MISMO
+
+// window.addEventListener("scroll",()=>{
+    
+//         let positionObj0 = servicios[0].children[0].getBoundingClientRect().top;
+//         let positionObj1 = servicios[1].children[0].getBoundingClientRect().top;
+//         let positionObj2 = servicios[2].children[0].getBoundingClientRect().top;
+      
+
+//         let tamañoDePantalla = window.innerHeight/2;
+
+//         // console.log(positionObj0, tamañoDePantalla)
+
+//         if( positionObj0 < tamañoDePantalla ){
+//             // console.log( servicio  )
+//             servicios[0].children[0].style.animation = "apareceRandL 1s ease-out";
+//             servicios[0].children[1].style.animation = "apareceLandR 1s ease-out";
+//             servicios[0].children[0].style.visibility = "visible";
+//             servicios[0].children[1].style.visibility = "visible";
+//         } else {
+//             servicios[0].children[0].style.animation = "";
+//             servicios[0].children[1].style.animation = "";
+//             servicios[0].children[0].style.visibility = "hidden";
+//             servicios[0].children[1].style.visibility= "hidden";
+//         }
+
+//         if( positionObj1 < tamañoDePantalla ){
+//             // console.log( servicio  )
+//             servicios[1].children[0].style.animation = "apareceRandL 1s ease-out";
+//             servicios[1].children[1].style.animation = "apareceLandR 1s ease-out";
+//             servicios[1].children[0].style.visibility = "visible";
+//             servicios[1].children[1].style.visibility = "visible";
+//         } else {
+//             servicios[1].children[0].style.animation = "";
+//             servicios[1].children[1].style.animation = "";
+//             servicios[1].children[0].style.visibility = "hidden";
+//             servicios[1].children[1].style.visibility= "hidden";
+//         }
+
+//         if( positionObj2 < tamañoDePantalla ){
+//             // console.log( servicio  )
+//             servicios[2].children[0].style.animation = "apareceRandL 1s ease-out";
+//             servicios[2].children[1].style.animation = "apareceLandR 1s ease-out";
+//             servicios[2].children[0].style.visibility = "visible";
+//             servicios[2].children[1].style.visibility = "visible";
+//         } else {
+//             servicios[2].children[0].style.animation = "";
+//             servicios[2].children[1].style.animation = "";
+//             servicios[2].children[0].style.visibility = "hidden";
+//             servicios[2].children[1].style.visibility= "hidden";
+//         }
+        
+        
+    
+// })
 
 /*-------------     ----------------   FORM   -------------------         -------- */
 

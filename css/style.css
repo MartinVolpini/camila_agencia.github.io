@@ -14,7 +14,7 @@ a {
 }
 nav ul li a:hover{ color: #333333 !important ; }
 
-                                        /*---------             ---------------    INICIO         ---------------          ---------------*/
+/*---------             ---------------    INICIO         ---------------          ---------------*/
 *{
     margin: 0%;
     box-sizing: border-box;  
@@ -83,9 +83,10 @@ nav ul li a:hover{ color: #333333 !important ; }
         position: fixed; top: 60px; /*Ya deja de depender de su contenedor header y se posisiona de a cuerdo con el body sin q le afecte el sckoll*/
         z-index: 50;
         display: flex; flex-direction: column;  text-align: center;
+        box-sizing: border-box;
         width: 100%; padding: 0%; /*El navegador por defecto a los ul les agrega un padding-left. Sacaselo para q los elementos queden sentrados*/
-        height: calc(100% - 60px);/*AL SER POSITION:FIXED; NO LO VA A AFECTAR EL SCKOOL, PUEDE A QUEDEN ELEMENTOS DE FORMA INAXECOBLES. EL VALOR DE 100% LE DICE A SEA EL 100 POR CIENTO DEL VIWPORT Y Q LE RESTE LOS 60PX DEL HEADER.*/
-        overflow-y: auto; /*LE AGREGAS UN SCKULL POR SI EL DISPOSITIVO ES CHICO*/
+        height: calc(100vh - 3rem);/*AL SER POSITION:FIXED; NO LO VA A AFECTAR EL SCKOOL, PUEDE A QUEDEN ELEMENTOS DE FORMA INAXECOBLES. EL VALOR DE 100% LE DICE A SEA EL 100 POR CIENTO DEL VIWPORT Y Q LE RESTE LOS 60PX DEL HEADER.*/
+        overflow-y: auto; /*LE AGREGAS UN SCKULL POR SI EL DISPOSITIVO ES CHICO */
         background-color: var(--back);
 
         left: 100%;
@@ -97,6 +98,9 @@ nav ul li a:hover{ color: #333333 !important ; }
     .nav-menu-items{
         display: block; 
         line-height: 70px; padding: 50px 0px; margin: 0%;
+    }
+    .nav-menu-items:nth-child(1){
+        padding-top: 7rem; 
     }
     .nav-menu-items .nav-link:hover,.nav-menu-items .nav-link:active{
         border-radius: 3px; 
@@ -117,7 +121,7 @@ nav ul li a:hover{ color: #333333 !important ; }
     position:  relative; 
     min-height: 587px; width: 100%; margin-bottom: 10px;  box-sizing: border-box;
     background-color: #fff0ff;
-    background-image: url("/img/portada.jpg");
+    background-image: url("../img/portada.jpg");
     background-position: center; background-size: cover; background-repeat: no-repeat;
 }
 .d-block { 
@@ -132,11 +136,13 @@ nav ul li a:hover{ color: #333333 !important ; }
 
                           /*     -----------          ------------------          SERVICIOS          ---------------                -----------------*/
 .box {  
+    box-sizing: border-box;
     display: flex; flex-flow: row nowrap; justify-content: space-around; align-content: center;
     height: 38rem; width: 100%; border-bottom: #d4d4d4dc 2px solid; margin-bottom: 10px;  box-sizing: border-box;
     background-color: #ffffff; color: #f70759; 
 }
 .box__text {
+    visibility: hidden;
     order:1; align-self: center; flex-basis: 35rem;
     padding-left: 5%;
     text-align: center;
@@ -149,27 +155,34 @@ nav ul li a:hover{ color: #333333 !important ; }
 }
 .box__bp{ padding: 0px 30px; } /*Es para q el texto este mas junto*/
 .box__img {
+    visibility: hidden;
     order: 2; align-self: center; padding: 0%;     
     height: 79%; clip-path: circle(41% at center);
     /*height: 80%; border-radius: 160px;*/ /*clip-path: polygon(30% 0, 100% 0, 100% 100%, 15% 100%);*/
 }
+
 .box1__text {
+    visibility: hidden;
     order: 2; align-self: center; flex-basis: 35rem;
     padding-right: 5%;
     text-align: center;
     font-size: 1.2rem;
 }
 .box1__img {
-    order: 1; align-self: center; padding: 0%;    margin: 0px auto ;
+    visibility: hidden;
+    order: 1; align-self: center; padding: 0%;    ; /* margin: 0px auto */
     height: 79%; clip-path: circle(41% at center); 
 }
+
 .box2__text {
-    order: 1; align-self: center; flex-basis: 35rem;
+    visibility: hidden;
+    order: 1; align-self: center; flex-basis: 34rem;
     padding-left: 5%;
     text-align: center;
     font-size: 1.2rem;
 }
 .box2__img {
+    visibility: hidden;
     order: 2; align-self: center; 
     height: 77%; clip-path: circle(45% at center); /*height: 80%; border-radius: 160px; */
 }
@@ -181,14 +194,20 @@ nav ul li a:hover{ color: #333333 !important ; }
         height: 73%; clip-path: circle(41% at center);
     }
     .box1__img {
-        align-self: center;  padding: 0%; margin-left: 5%;
+        align-self: center;  padding: 0%; 
+        margin-left: 5%;
         height: 70%; clip-path: circle(41% at center); 
     }
+  
     .box2__img {
-        order: 2; align-self: center; 
+        order: 2; align-self: center;   
         height: 72%; clip-path: circle(45% at center); /*height: 80%; border-radius: 160px; */
     }
     
+    .whatsapp { 
+        display: none!important; 
+
+    }
  }
  @media (max-width:896px){
     .box__text {padding: 0px;}
@@ -255,7 +274,10 @@ nav ul li a:hover{ color: #333333 !important ; }
 p .card-link:hover,p .card-link:active,p .card-link:focus{
     color: #ffef49 !important ;  text-decoration: none;
 }
+
+
                                             /*CONTACTO*/
+
 .contacto {
     display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
     height: 38rem; width: 100%; margin-bottom: 10px; box-sizing: border-box;
@@ -272,6 +294,7 @@ p .card-link:hover,p .card-link:active,p .card-link:focus{
 }
 
 .whatsapp { 
+
     display: flex; flex-direction: column; text-align: center;  transition: all 0.3s;
     position: fixed; bottom: 10px; right: 0%;
     height: 10rem; width: 3rem; border-radius: 10px;
@@ -281,6 +304,13 @@ p .card-link:hover,p .card-link:active,p .card-link:focus{
 a .letter{
     margin: 0px; padding: 1px 0px;
     font-size: 16px;
+}
+@media(max-width:560px){
+    .mb-3 { 
+        width: 92%;   
+        padding: 5px 10px; margin: 27px 0px;
+        color: #ffffff;
+    }  
 }
 .whatsapp a:hover,.whatsapp a:active{ color: var(--white); opacity: 0.5; font-size: 14px;}
 @media (max-width: 896px){ .whatsapp{ display: none;} }
@@ -307,3 +337,5 @@ a .letter{
     .logo { font-size: 1.5rem; }
    
 }
+
+
