@@ -1,0 +1,22 @@
+@keyframes apareceRandL{
+    0%{ opacity: 0;
+        transform: translate(-10%);
+        scale: 0.8;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0%);
+        /* scale: 0.9; */
+    }
+}
+@keyframes apareceLandR{
+    0%{ opacity: 0;
+        transform: translateX(10%);
+        scale: 0.9;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+        /* scale: 1.5; */
+    }
+}
